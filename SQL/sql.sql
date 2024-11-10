@@ -66,7 +66,7 @@ begin
 end
 go
 
-create or alter procedure sp_insert_fabricantes(
+create or alter procedure sp_update_fabricantes(
 	@id int,
 	@descricao varchar(max)
 )
@@ -76,12 +76,11 @@ begin
 	
 end
 go
-
 create or alter procedure sp_insert_Notebooks(
 	@dataCompra datetime,
 	@marcaProcessador int,
 	@fabricanteId int,
-	@foto varbinary,
+	@foto varbinary(max),
 	@VelocidadeProcessador numeric,
 	@PlacaGrafica bit,
 	@Observacoes varchar(max)
@@ -111,12 +110,12 @@ begin
 end
 go
 
-create or alter procedure sp_insert_Notebooks(
+create or alter procedure sp_update_Notebooks(
 	@id int,
 	@dataCompra datetime,
 	@marcaProcessador int,
 	@fabricanteId int,
-	@foto varbinary,
+	@foto varbinary(max),
 	@VelocidadeProcessador numeric,
 	@PlacaGrafica bit,
 	@Observacoes varchar(max)

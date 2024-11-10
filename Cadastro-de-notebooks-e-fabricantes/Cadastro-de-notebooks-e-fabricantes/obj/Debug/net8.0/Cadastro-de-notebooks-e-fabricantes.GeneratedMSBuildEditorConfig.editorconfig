@@ -18,12 +18,28 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\lucas\repo\Cadastro-de-notebooks-e-fabricantes\Cadastro-de-notebooks-e-fabricantes\Cadastro-de-notebooks-e-fabricantes
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/lucas/repo/Cadastro-de-notebooks-e-fabricantes/Cadastro-de-notebooks-e-fabricantes/Cadastro-de-notebooks-e-fabricantes/Views/Fabricantes/Form.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFicmljYW50ZXNcRm9ybS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lucas/repo/Cadastro-de-notebooks-e-fabricantes/Cadastro-de-notebooks-e-fabricantes/Cadastro-de-notebooks-e-fabricantes/Views/Fabricantes/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFicmljYW50ZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/lucas/repo/Cadastro-de-notebooks-e-fabricantes/Cadastro-de-notebooks-e-fabricantes/Cadastro-de-notebooks-e-fabricantes/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/lucas/repo/Cadastro-de-notebooks-e-fabricantes/Cadastro-de-notebooks-e-fabricantes/Cadastro-de-notebooks-e-fabricantes/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lucas/repo/Cadastro-de-notebooks-e-fabricantes/Cadastro-de-notebooks-e-fabricantes/Cadastro-de-notebooks-e-fabricantes/Views/Notebooks/Form.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTm90ZWJvb2tzXEZvcm0uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lucas/repo/Cadastro-de-notebooks-e-fabricantes/Cadastro-de-notebooks-e-fabricantes/Cadastro-de-notebooks-e-fabricantes/Views/Notebooks/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTm90ZWJvb2tzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/lucas/repo/Cadastro-de-notebooks-e-fabricantes/Cadastro-de-notebooks-e-fabricantes/Cadastro-de-notebooks-e-fabricantes/Views/Shared/Error.cshtml]

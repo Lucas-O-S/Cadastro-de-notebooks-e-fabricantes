@@ -1,0 +1,93 @@
+﻿@model NotebooksViewModel
+
+<div class="container mt-4">
+    <form asp-action="Save" method="post" enctype="multipart/form-data">
+        <input value="@ViewBag.operacao" name="operacao" hidden />
+        <input value="@Model.id" asp-for="id" hidden />
+
+        <div class="form-group">
+            <label asp-for="dataCompra" class="control-label"> Data da Compra </label>
+            @if(ViewBag.operacao == "I")
+            {
+                <input type="date" asp-for="dataCompra" class="form-control" value="@DateTime.Today.ToString("yyyy-MM-dd")" />
+
+            }
+            else
+            {
+                <input type="date" asp-for="dataCompra" class="form-control" value="@Model.dataCompra.ToString("yyyy-MM-dd")" />
+
+            }
+            <span asp-validation-for="dataCompra" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="marcaProcessador" class="control-label">Marca do Processador</label>
+            <select asp-for="marcaProcessador" class="form-control" > 
+                @foreach(var marcas in ViewBag.marcas){
+                    <option value="@((int)marcas)">@marcas </option>
+                }
+            </select>
+            <span asp-validation-for="marcaProcessador" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="fabricanteId" class="control-label">Fabricante</label>
+            <select asp-for="fabricanteId" class="form-control">
+                @foreach (FabricantesViewModel fabricantes in ViewBag.fabricantes)
+                {
+                    <option value="@fabricantes.id">@fabricantes.descricao </option>
+                }
+            </select>
+            <span asp-validation-for="fabricanteId" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="valocidadeProcessador" class="control-label"> Velocidade do Processador </label>
+            <input type="text" asp-for="valocidadeProcessador" class="form-control" />
+            <span asp-validation-for="valocidadeProcessador" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="placaGrafica" class="control-label"> Placa Grafica </label>
+
+            <select asp-for="placaGrafica" class="form-control">
+                <option value="@true">Tem</option>
+                <option value="@false">Não tem</option>
+
+            </select>
+            <span asp-validation-for="placaGrafica" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="observacoes" class="control-label"> Observações </label>
+            <textarea type="text" asp-for="observacoes" class="form-control"></textarea>
+            <span asp-validation-for="observacoes" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="foto" class="control-label">Logo do Time</label>
+            <input asp-for="foto" type="file" id="Imagem" onchange="ExibirImagem()" class="form-control" />
+            <span asp-validation-for="foto" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label>Foto Atual</label>
+            <img src="data:image/png;base64,@Model.foto64" class="img-responsive" id="imgPreview" alt="Logo do Time" style="width: 100px; height: 100px;" />
+        </div>
+
+        <button type="submit" class="btn btn-success">Salvar</button>
+        <a href="@Url.Action("Index", "TimeFutebol")" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>
+
+<script>
+    function ExibirImagem() {
+        var oFReader = new FileReader();
+        var fileInput = document.getElementById("Imagem");
+        var file = fileInput.files[0];
+
+        if (file) {
+            oFReader.readAsDataURL(file);
+            oFReader.onload = function (oFREvent) {
+                document.getElementById("imgPreview").src = oFREvent.target.result;
+            };
+        }
+    }
+</script>

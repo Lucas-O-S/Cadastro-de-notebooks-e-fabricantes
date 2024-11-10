@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\Cadastro-de-notebooks-e-fabricantes.props" />
+</Project>

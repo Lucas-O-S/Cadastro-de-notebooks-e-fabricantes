@@ -1,0 +1,42 @@
+﻿@model List< FabricantesViewModel>
+
+<div class="container mt-4">
+    <!-- Botões acima da tabela -->
+    <div class="mb-3">
+        <a href="@Url.Action("Index", "Home")" class="btn btn-secondary btn-sm">Voltar à Home</a>
+        <a href="@Url.Action("Create", "Fabricantes")" class="btn btn-success btn-sm">Criar Novo Registro</a>
+    </div>
+
+    <h2>Lista de Fabricantes</h2>
+    <table class="table table-striped table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <th asp-for="Id">ID</th>
+                <th asp-for="nome">Nome</th>
+
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var fabricantes in Model)
+            {
+                <tr>
+                    <td>@fabricantes.id</td>
+                    <td>@fabricantes.descricao</td>
+                    <td>
+                        <a asp-controller="fabricantes" asp-action="Edit" asp-route-id="@fabricantes.id" class="btn btn-primary btn-sm">Editar</a>
+                        <button type="button" class="btn btn-danger btn-sm" onclick="ApagarModel(@fabricantes.id)">Excluir</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<script>
+    function ApagarModel(id) {
+        if (confirm("Confirmar a exclusão do registro?")) {
+            location.href = "fabricantes/Delete?Id=" + id;
+        }
+    }
+</script>

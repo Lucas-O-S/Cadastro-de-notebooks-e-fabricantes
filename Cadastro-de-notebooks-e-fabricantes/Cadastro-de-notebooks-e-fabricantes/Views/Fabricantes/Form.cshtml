@@ -1,0 +1,18 @@
+﻿@model FabricantesViewModel
+
+<div class="container mt-4">
+    <form asp-action="Save" method="post" enctype="multipart/form-data">
+        <input value="@ViewBag.operacao" name="operacao" hidden />
+        <input value="@Model.id" asp-for="id" hidden />
+
+        <div class="form-group">
+            <label asp-for="descricao" class="control-label"> Nome do Fabricante </label>
+            <input asp-for="descricao" class="form-control" />
+            <span asp-validation-for="descricao" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-success">Salvar</button>
+        <a href="@Url.Action("Index", "fabricantes")" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>
+

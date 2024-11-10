@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Cadastro-de-notebooks-e-fabricantes")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ed621fab1a5f315d3b081aa9cf48c03858cf2e7c")]
 [assembly: System.Reflection.AssemblyProductAttribute("Cadastro-de-notebooks-e-fabricantes")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Cadastro-de-notebooks-e-fabricantes")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
