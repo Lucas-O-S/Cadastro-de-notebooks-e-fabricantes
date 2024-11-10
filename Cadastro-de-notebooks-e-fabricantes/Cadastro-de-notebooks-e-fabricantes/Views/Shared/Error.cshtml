@@ -1,0 +1,49 @@
+﻿@model TimeFutebolViewModel
+
+<div class="container mt-4">
+    <form asp-action="Save" method="post" enctype="multipart/form-data">
+        <input value="@ViewBag.operacao" name="operacao" hidden />
+        <input value="@Model.id" asp-for="id" hidden />
+
+        <div class="form-group">
+            <label asp-for="nome" class="control-label"> Nome do Time </label>
+            <input asp-for="nome" class="form-control" />
+            <span asp-validation-for="nome" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="nomeDoEstadio" class="control-label">Nome do Estadio</label>
+            <input asp-for="nomeDoEstadio" class="form-control" />
+            <span asp-validation-for="nomeDoEstadio" class="text-danger"></span>
+        </div>
+        
+        <div class="form-group">
+            <label asp-for="logotipoTime" class="control-label">Logo do Time</label>
+            <input asp-for="logotipoTime" type="file" id="Imagem" onchange="ExibirImagem()" class="form-control" />
+            <span asp-validation-for="logotipoTime" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label>Logo Atual</label>
+            <img src="data:image/png;base64,@Model.logotipoTime64" class="img-responsive" id="imgPreview" alt="Logo do Time" style="width: 100px; height: 100px;" />
+        </div>
+
+        <button type="submit" class="btn btn-success">Salvar</button>
+        <a href="@Url.Action("Index", "TimeFutebol")" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>
+
+<script>
+    function ExibirImagem() {
+        var oFReader = new FileReader();
+        var fileInput = document.getElementById("Imagem");
+        var file = fileInput.files[0];
+
+        if (file) {
+            oFReader.readAsDataURL(file);
+            oFReader.onload = function (oFREvent) {
+                document.getElementById("imgPreview").src = oFREvent.target.result;
+            };
+        }
+    }
+</script>
